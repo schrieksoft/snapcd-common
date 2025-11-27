@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+env:
+  FOO: bar
+  REPO_NAME: ${{ github.repository }}
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+
+    outputs:
+      version: ${{ steps.gitversion.outputs.SemVer }}
+      unique_key: ${{ steps.generate_key.outputs.guid }}
+
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Needed for GitVersion
+
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.100
+        
+    - name: Prep
+      run: |
+        mkdir -p ./artifacts
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v3.1.11
+      with:
+        versionSpec: 5.x
+
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v3.1.11
+      id: gitversion
+      with:
+        useConfigFile: true
+        configFilePath: gitversion.yaml
+
+    - name: Display GitVersion outputs
+      run: |
+        echo "Version: ${{ steps.gitversion.outputs.SemVer }}"
+        echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }}"
+
+    - name: Build and Pack
+      run: dotnet pack SnapCd.Common/SnapCd.Common.csproj -c Release -p:Version=${{ steps.gitversion.outputs.SemVer }} -o ./artifacts
+
+    - name: Publish to NuGet
+      run: dotnet nuget push ./artifacts/*.nupkg --source https://api.nuget.org/v3/index.json
