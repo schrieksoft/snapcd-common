@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <!-- NuGet Package Metadata -->
+        <PackageId>SnapCd.Common</PackageId>
+        <Authors>Schrieksoft</Authors>
+        <Company>Schrieksoft</Company>
+        <Description>Common DTOs and shared types for SnapCD</Description>
+        <PackageProjectUrl>https://github.com/schrieksoft/snapcd-common</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/schrieksoft/snapcd-common</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageTags>snapcd</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="/"/>
+        <None Include="../icon.png" Pack="true" PackagePath="/"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.0"/>
+    </ItemGroup>
+
+</Project>
