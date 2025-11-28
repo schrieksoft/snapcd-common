@@ -57,6 +57,25 @@ jobs:
     - name: Build and Pack
       run: dotnet pack SnapCd.Common/SnapCd.Common.csproj -c Release -p:Version=${{ steps.gitversion.outputs.SemVer }} -o ./artifacts
 
+    - name: Tag
+      uses: actions/github-script@v5
+      if: github.ref == 'refs/heads/main'
+      with:
+        script: |
+          github.rest.git.createRef({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: 'refs/tags/${{ steps.gitversion.outputs.SemVer }}',
+            sha: context.sha
+          })
+
+    - name: Release
+      if: github.ref == 'refs/heads/main'
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      run: |
+        gh release create ${{ steps.gitversion.outputs.SemVer }} --notes "Release ${{ steps.gitversion.outputs.SemVer }}" -R https://github.com/schrieksoft/snapcd
+        
     - name: NuGet Login
       uses: NuGet/login@v1
       id: nuget-login
