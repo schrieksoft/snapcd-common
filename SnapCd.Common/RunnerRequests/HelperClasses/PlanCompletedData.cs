@@ -16,13 +16,6 @@ public class PlanCompletedData
     public int DestroyCount { get; set; }
     public int RecreateCount { get; set; }
 
-    // Resource change details (JSON)
-    public required string Unchanged { get; set; }
-    public required string Create { get; set; }
-    public required string Modify { get; set; }
-    public required string Destroy { get; set; }
-    public required string Recreate { get; set; }
-
     // Output counts
     public int OutputsTotalCount { get; set; }
     public int OutputsTotalChangedCount { get; set; }
@@ -31,11 +24,4 @@ public class PlanCompletedData
     public int OutputsModifyCount { get; set; }
     public int OutputsDestroyCount { get; set; }
     public int OutputsRecreateCount { get; set; }
-
-    // Output change details (JSON)
-    public required string OutputsUnchanged { get; set; }
-    public required string OutputsCreate { get; set; }
-    public required string OutputsModify { get; set; }
-    public required string OutputsDestroy { get; set; }
-    public required string OutputsRecreate { get; set; }
 }
