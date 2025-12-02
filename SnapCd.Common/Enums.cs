@@ -117,7 +117,8 @@ public enum OrganizationRole
     StackCreator,
     IdentityAccessManager,
     JobManager,
-    SourceChangeNotifier
+    SourceChangeNotifier,
+    SubscriptionManager,
 }
 
 public enum StackRole
