@@ -2,7 +2,7 @@ using SnapCd.Common.Interfaces;
 
 namespace SnapCd.Common.Dto.RoleAssignments;
 
-public class GroupNamespaceRoleAssignmentDto : GroupNamespaceRoleAssignmentCreateDto, IDto
+public class GroupRunnerRoleAssignmentReadDto : GroupRunnerRoleAssignmentCreateDto, IDto
 {
     public Guid Id { get; set; }
 }
