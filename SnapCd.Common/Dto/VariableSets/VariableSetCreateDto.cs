@@ -7,6 +7,7 @@ namespace SnapCd.Common.Dto.VariableSets;
 /// </summary>
 public class VariableSetCreateDto
 {
+    public Guid ModuleId { get; set; }
     public long Timestamp { get; set; }
 
     public string Checksum { get; set; } = null!;
