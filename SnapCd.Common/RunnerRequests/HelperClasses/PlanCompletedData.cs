@@ -24,4 +24,11 @@ public class PlanCompletedData
     public int OutputsModifyCount { get; set; }
     public int OutputsDestroyCount { get; set; }
     public int OutputsRecreateCount { get; set; }
+
+    // Output name lists
+    public List<string>? OutputsUnchangedList { get; set; }
+    public List<string>? OutputsCreateList { get; set; }
+    public List<string>? OutputsModifyList { get; set; }
+    public List<string>? OutputsDestroyList { get; set; }
+    public List<string>? OutputsRecreateList { get; set; }
 }
