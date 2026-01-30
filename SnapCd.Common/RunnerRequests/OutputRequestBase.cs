@@ -9,4 +9,5 @@ public class OutputRequestBase : EngineJobRequestBase
 {
     public string? OutputBeforeHook { get; set; }
     public string? OutputAfterHook { get; set; }
+    public List<string>? ExtraFileNames { get; set; }
 }

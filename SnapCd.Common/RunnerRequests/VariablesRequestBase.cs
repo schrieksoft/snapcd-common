@@ -8,4 +8,5 @@ namespace SnapCd.Common.RunnerRequests;
 /// </summary>
 public class VariablesRequestBase : EngineJobRequestBase
 {
+    public List<string>? ExtraFileNames { get; set; }
 }

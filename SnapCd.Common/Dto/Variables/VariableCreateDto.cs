@@ -10,4 +10,5 @@ public class VariableCreateDto
     public string? Description { get; set; }
     public bool Sensitive { get; set; } = false;
     public bool Nullable { get; set; } = false;
+    public bool FromExtraFile { get; set; } = false;
 }

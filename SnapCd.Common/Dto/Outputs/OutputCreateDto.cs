@@ -9,4 +9,5 @@ public class OutputCreateDto
     public bool? Sensitive { get; set; }
     public string Type { get; set; } = null!;
     public string Value { get; set; } = null!;
+    public bool FromExtraFile { get; set; } = false;
 }
