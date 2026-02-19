@@ -69,4 +69,7 @@ public class ModuleCreateDto
     public bool TriggerOnSourceChanged { get; set; }
 
     public bool TriggerOnSourceChangedNotification { get; set; }
+
+    public bool? DriftCheckEnabled { get; set; }
+    public int? DriftCheckIntervalMinutes { get; set; }
 }

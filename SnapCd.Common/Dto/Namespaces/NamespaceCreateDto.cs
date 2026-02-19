@@ -43,5 +43,7 @@ public class NamespaceCreateDto
     public StateManagementEngine? DefaultEngine { get; set; }
 
     public NamespaceTriggerBehaviour? TriggerBehaviourOnModified { get; set; }
-    
+
+    public bool? DefaultDriftCheckEnabled { get; set; }
+    public int? DefaultDriftCheckIntervalMinutes { get; set; }
 }
