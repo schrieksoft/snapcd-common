@@ -17,6 +17,10 @@ public class EngineBackendConfiguration
     // Pulumi flag configuration (resolved from namespace defaults + module overrides)
     public List<PulumiFlagEntry> PulumiFlags { get; set; } = [];
     public List<PulumiArrayFlagEntry> PulumiArrayFlags { get; set; } = [];
+
+    // Terraform/OpenTofu flag configuration (resolved from namespace defaults + module overrides)
+    public List<TerraformFlagEntry> TerraformFlags { get; set; } = [];
+    public List<TerraformArrayFlagEntry> TerraformArrayFlags { get; set; } = [];
 }
 
 public class PulumiFlagEntry
@@ -30,5 +34,19 @@ public class PulumiArrayFlagEntry
 {
     public PulumiCommandTask Task { get; set; }
     public PulumiArrayFlag Flag { get; set; }
+    public string Value { get; set; } = null!;
+}
+
+public class TerraformFlagEntry
+{
+    public TerraformCommandTask Task { get; set; }
+    public TerraformFlag Flag { get; set; }
+    public string? Value { get; set; }
+}
+
+public class TerraformArrayFlagEntry
+{
+    public TerraformCommandTask Task { get; set; }
+    public TerraformArrayFlag Flag { get; set; }
     public string Value { get; set; } = null!;
 }

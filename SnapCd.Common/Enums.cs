@@ -165,6 +165,58 @@ public enum PulumiArrayFlag
     Config
 }
 
+public enum TerraformCommandTask
+{
+    Init,
+    Plan,
+    Apply,
+    Destroy,
+    Output
+}
+
+public enum TerraformFlag
+{
+    // Init
+    ForceCopy,
+    FromModule,
+    GetPlugins,
+    LockTimeout,
+    Lockfile,
+    MigrateState,
+    Plugin,
+    Reconfigure,
+    TestDirectory,
+    Upgrade,
+
+    // Plan/Apply/Destroy shared
+    CompactWarnings,
+    Concurrency,
+    Lock,
+    NoColor,
+    Parallelism,
+    Refresh,
+    RefreshOnly,
+
+    // Plan only
+    DetailedExitcode,
+    GenerateConfigOut,
+
+    // Apply only
+    CreateBeforeDestroy,
+
+    // Output only
+    Raw,
+}
+
+public enum TerraformArrayFlag
+{
+    Target,
+    Replace,
+    Exclude,
+    Var,
+    BackendConfig,
+}
+
 public enum ResourceDiscriminator
 {
     Organization,

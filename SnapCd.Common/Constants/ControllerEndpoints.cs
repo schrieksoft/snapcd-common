@@ -40,6 +40,10 @@ public static class ControllerEndpoints
     public const string ModulePulumiArrayFlag = "api/{organizationId}/ModulePulumiArrayFlag";
     public const string NamespacePulumiFlag = "api/{organizationId}/NamespacePulumiFlag";
     public const string NamespacePulumiArrayFlag = "api/{organizationId}/NamespacePulumiArrayFlag";
+    public const string NamespaceTerraformFlag = "api/{organizationId}/NamespaceTerraformFlag";
+    public const string NamespaceTerraformArrayFlag = "api/{organizationId}/NamespaceTerraformArrayFlag";
+    public const string ModuleTerraformFlag = "api/{organizationId}/ModuleTerraformFlag";
+    public const string ModuleTerraformArrayFlag = "api/{organizationId}/ModuleTerraformArrayFlag";
     public const string SourceChangedNotification = "api/{organizationId}/SourceChangedNotification";
     public const string Jobs = "api/{organizationId}/Job";
     public const string SourceRefresherPreselection = "api/{organizationId}/SourceRefresherPreselection";

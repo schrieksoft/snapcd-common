@@ -13,4 +13,7 @@ public class OutputRequestBase : EngineJobRequestBase
 
     public List<PulumiFlagEntry> PulumiFlags { get; set; } = [];
     public List<PulumiArrayFlagEntry> PulumiArrayFlags { get; set; } = [];
+
+    public List<TerraformFlagEntry> TerraformFlags { get; set; } = [];
+    public List<TerraformArrayFlagEntry> TerraformArrayFlags { get; set; } = [];
 }

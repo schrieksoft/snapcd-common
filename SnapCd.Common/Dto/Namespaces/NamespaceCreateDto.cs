@@ -10,9 +10,12 @@ public class NamespaceCreateDto
     public string? DefaultInitBeforeHook { get; set; }
     public string? DefaultInitAfterHook { get; set; }
     
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? DefaultAutoUpgradeEnabled { get; set; }
-    
+
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? DefaultAutoReconfigureEnabled { get; set; }
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? DefaultAutoMigrateEnabled { get; set; }
     public bool? DefaultCleanInitEnabled { get; set; }
 
