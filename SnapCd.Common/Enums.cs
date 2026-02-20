@@ -78,7 +78,16 @@ public enum DefinitionInputType
 public enum StateManagementEngine
 {
     OpenTofu,
-    Terraform
+    Terraform,
+    Pulumi
+}
+
+public enum PulumiLoginType
+{
+    None,
+    PulumiCloud,
+    Local,
+    Custom
 }
 
 public enum ResourceDiscriminator
