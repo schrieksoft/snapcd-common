@@ -36,6 +36,10 @@ public static class ControllerEndpoints
     public const string NamespaceExtraFile = "api/{organizationId}/NamespaceExtraFile";
     public const string NamespaceBackendConfig = "api/{organizationId}/NamespaceBackendConfig";
     public const string ModuleBackendConfig = "api/{organizationId}/ModuleBackendConfig";
+    public const string ModulePulumiFlag = "api/{organizationId}/ModulePulumiFlag";
+    public const string ModulePulumiArrayFlag = "api/{organizationId}/ModulePulumiArrayFlag";
+    public const string NamespacePulumiFlag = "api/{organizationId}/NamespacePulumiFlag";
+    public const string NamespacePulumiArrayFlag = "api/{organizationId}/NamespacePulumiArrayFlag";
     public const string SourceChangedNotification = "api/{organizationId}/SourceChangedNotification";
     public const string Jobs = "api/{organizationId}/Job";
     public const string SourceRefresherPreselection = "api/{organizationId}/SourceRefresherPreselection";

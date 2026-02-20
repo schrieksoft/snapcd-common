@@ -14,8 +14,21 @@ public class EngineBackendConfiguration
     public List<NamespaceBackendConfigReadDto> NamespaceBackendConfigs { get; set; } = [];
     public List<ModuleBackendConfigReadDto> ModuleBackendConfigs { get; set; } = [];
 
-    // Pulumi backend configuration
-    public PulumiLoginType PulumiLoginType { get; set; }
-    public string? PulumiCustomLoginUrl { get; set; }
-    public string? PulumiStackName { get; set; }
+    // Pulumi flag configuration (resolved from namespace defaults + module overrides)
+    public List<PulumiFlagEntry> PulumiFlags { get; set; } = [];
+    public List<PulumiArrayFlagEntry> PulumiArrayFlags { get; set; } = [];
+}
+
+public class PulumiFlagEntry
+{
+    public PulumiCommandTask Task { get; set; }
+    public PulumiFlag Flag { get; set; }
+    public string? Value { get; set; }
+}
+
+public class PulumiArrayFlagEntry
+{
+    public PulumiCommandTask Task { get; set; }
+    public PulumiArrayFlag Flag { get; set; }
+    public string Value { get; set; } = null!;
 }

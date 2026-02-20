@@ -42,10 +42,6 @@ public class NamespaceCreateDto
 
     public StateManagementEngine? DefaultEngine { get; set; }
 
-    public PulumiLoginType? DefaultPulumiLoginType { get; set; }
-    public string? DefaultPulumiCustomLoginUrl { get; set; }
-    public string? DefaultPulumiStackName { get; set; }
-
     public NamespaceTriggerBehaviour? TriggerBehaviourOnModified { get; set; }
 
     public bool? DefaultDriftCheckEnabled { get; set; }

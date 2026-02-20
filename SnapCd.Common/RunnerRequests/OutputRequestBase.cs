@@ -10,4 +10,7 @@ public class OutputRequestBase : EngineJobRequestBase
     public string? OutputBeforeHook { get; set; }
     public string? OutputAfterHook { get; set; }
     public List<string>? ExtraFileNames { get; set; }
+
+    public List<PulumiFlagEntry> PulumiFlags { get; set; } = [];
+    public List<PulumiArrayFlagEntry> PulumiArrayFlags { get; set; } = [];
 }

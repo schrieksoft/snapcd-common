@@ -12,4 +12,7 @@ public class PlanDestroyRequestBase : EngineJobRequestBase
     public string? PlanDestroyAfterHook { get; set; }
 
     public Dictionary<string, string> ResolvedParameters { get; set; } = null!;
+
+    public List<PulumiFlagEntry> PulumiFlags { get; set; } = [];
+    public List<PulumiArrayFlagEntry> PulumiArrayFlags { get; set; } = [];
 }

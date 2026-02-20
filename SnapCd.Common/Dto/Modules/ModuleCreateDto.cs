@@ -62,10 +62,6 @@ public class ModuleCreateDto
 
     public StateManagementEngine? Engine { get; set; }
 
-    public PulumiLoginType? PulumiLoginType { get; set; }
-    public string? PulumiCustomLoginUrl { get; set; }
-    public string? PulumiStackName { get; set; }
-
     public bool TriggerOnDefinitionChanged { get; set; }
 
     public bool TriggerOnUpstreamOutputChanged { get; set; }

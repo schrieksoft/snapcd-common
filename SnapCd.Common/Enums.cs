@@ -82,12 +82,87 @@ public enum StateManagementEngine
     Pulumi
 }
 
-public enum PulumiLoginType
+public enum PulumiCommandTask
 {
-    None,
-    PulumiCloud,
-    Local,
-    Custom
+    Init,
+    Plan,
+    Apply,
+    Destroy,
+    Output
+}
+
+public enum PulumiFlag
+{
+    // Init — Login
+    CloudUrl,
+    LoginLocal,
+    LoginCloud,
+    DefaultOrg,
+    Insecure,
+    OidcExpiration,
+    OidcOrg,
+    OidcTeam,
+    OidcToken,
+    OidcUser,
+
+    // Init — Stack Select
+    StackName,
+    SecretsProvider,
+    CreateStack,
+
+    // Plan/Apply/Destroy shared
+    ConfigFile,
+    Debug,
+    Diff,
+    ExpectNoChanges,
+    Json,
+    Message,
+    Parallel,
+    Refresh,
+    RunProgram,
+    ShowConfig,
+    ShowFullOutput,
+    ShowReads,
+    ShowReplacementSteps,
+    ShowSames,
+    ShowSecrets,
+    SuppressOutputs,
+    SuppressProgress,
+    TargetDependents,
+    ExcludeDependents,
+    Neo,
+
+    // Plan only
+    ImportFile,
+
+    // Apply only
+    ContinueOnError,
+    SkipPreview,
+    Strict,
+
+    // Destroy only
+    ExcludeProtected,
+    Remove,
+
+    // Output
+    Shell,
+
+    // Global
+    Color,
+    Verbose,
+    Emoji
+}
+
+public enum PulumiArrayFlag
+{
+    PolicyPack,
+    PolicyPackConfig,
+    AttachDebugger,
+    Target,
+    Replace,
+    Exclude,
+    TargetReplace,
+    Config
 }
 
 public enum ResourceDiscriminator
