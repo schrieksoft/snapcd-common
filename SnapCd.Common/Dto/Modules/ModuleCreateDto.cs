@@ -35,11 +35,16 @@ public class ModuleCreateDto
     public string? InitBeforeHook { get; set; }
     public string? InitAfterHook { get; set; }
 
+    [Obsolete("Use IgnoreNamespaceFlags instead.")]
     public bool IgnoreNamespaceBackendConfigs { get; set; }
     public bool IgnoreNamespaceExtraFiles { get; set; }
+    public bool IgnoreNamespaceFlags { get; set; }
 
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? AutoUpgradeEnabled { get; set; }
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? AutoReconfigureEnabled { get; set; }
+    [Obsolete("Use TerraformFlag entities instead.")]
     public bool? AutoMigrateEnabled { get; set; }
     public bool? CleanInitEnabled { get; set; }
 

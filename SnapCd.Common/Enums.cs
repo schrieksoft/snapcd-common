@@ -78,7 +78,143 @@ public enum DefinitionInputType
 public enum StateManagementEngine
 {
     OpenTofu,
-    Terraform
+    Terraform,
+    Pulumi
+}
+
+public enum PulumiCommandTask
+{
+    Init,
+    Plan,
+    Apply,
+    Destroy,
+    Output
+}
+
+public enum PulumiFlag
+{
+    // Init — Login
+    CloudUrl,
+    LoginLocal,
+    LoginCloud,
+    DefaultOrg,
+    Insecure,
+    OidcExpiration,
+    OidcOrg,
+    OidcTeam,
+    OidcToken,
+    OidcUser,
+
+    // Init — Stack Select
+    StackName,
+    SecretsProvider,
+    CreateStack,
+
+    // Plan/Apply/Destroy shared
+    ConfigFile,
+    Debug,
+    Diff,
+    ExpectNoChanges,
+    Json,
+    Message,
+    Parallel,
+    Refresh,
+    RunProgram,
+    ShowConfig,
+    ShowFullOutput,
+    ShowReads,
+    ShowReplacementSteps,
+    ShowSames,
+    ShowSecrets,
+    SuppressOutputs,
+    SuppressProgress,
+    TargetDependents,
+    ExcludeDependents,
+    Neo,
+
+    // Plan only
+    ImportFile,
+
+    // Apply only
+    ContinueOnError,
+    SkipPreview,
+    Strict,
+
+    // Destroy only
+    ExcludeProtected,
+    Remove,
+
+    // Output
+    Shell,
+
+    // Global
+    Color,
+    Verbose,
+    Emoji
+}
+
+public enum PulumiArrayFlag
+{
+    PolicyPack,
+    PolicyPackConfig,
+    AttachDebugger,
+    Target,
+    Replace,
+    Exclude,
+    TargetReplace,
+    Config
+}
+
+public enum TerraformCommandTask
+{
+    Init,
+    Plan,
+    Apply,
+    Destroy,
+    Output
+}
+
+public enum TerraformFlag
+{
+    // Init
+    ForceCopy,
+    FromModule,
+    GetPlugins,
+    LockTimeout,
+    Lockfile,
+    MigrateState,
+    Plugin,
+    Reconfigure,
+    TestDirectory,
+    Upgrade,
+
+    // Plan/Apply/Destroy shared
+    CompactWarnings,
+    Concurrency,
+    Lock,
+    NoColor,
+    Parallelism,
+    Refresh,
+    RefreshOnly,
+
+    // Plan only
+    DetailedExitcode,
+    GenerateConfigOut,
+
+    // Apply only
+    CreateBeforeDestroy,
+
+    // Output only
+    Raw,
+}
+
+public enum TerraformArrayFlag
+{
+    Target,
+    Replace,
+    Exclude,
+    Var,
+    BackendConfig,
 }
 
 public enum ResourceDiscriminator

@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SnapCd.Common.Dto.NamespaceBackendConfigs;
 
+[Obsolete("Use TerraformFlag entities instead.")]
 public class NamespaceBackendConfigCreateDto
 {
     [Required] [MaxLength(255)] public string Name { get; set; } = string.Empty;
